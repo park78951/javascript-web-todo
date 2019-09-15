@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const ENV = process.env.NODE_ENV === 'development' ? 'development' : 'production';
 
-const PROPER_PATH = {
+const ROUTE = {
   development: '/',
   production: '/javascript-web-todo/'
 }
@@ -41,7 +41,7 @@ module.exports = {
       template: 'public/index.html'
     }),
     new webpack.EnvironmentPlugin({
-      PROPER_PATH: PROPER_PATH[ENV]
+      ROUTE: ROUTE[ENV]
     }),
     new CleanWebpackPlugin()
   ]

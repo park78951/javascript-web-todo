@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { LOADING, EMPTY_LIST } from '../../../config';
 
-const Div = styled.div`
+const TodoContnentsWrapper = styled.div`
   width: 85%;
   margin: 0 auto;
   color: #05386b;
@@ -40,12 +40,12 @@ const Contents = ({ myTodo, isFetched }) => {
   const ifEmpty = isFetched ? EMPTY_LIST : LOADING;
 
   return (
-    <Div>
+    <TodoContnentsWrapper>
       <p>Todo</p>
       <ul>
         {myTodo.length ? todoList : ifEmpty}
       </ul>
-    </Div>
+    </TodoContnentsWrapper>
   );
 }
 

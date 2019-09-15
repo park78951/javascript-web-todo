@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { NAV_NAMES } from '../../config';
 
-const Nav = styled.nav`
+const NavigationWrapper = styled.nav`
   height: 80px;
   width: 100%;
   background-color: #05386b;
@@ -46,8 +46,8 @@ const Nav = styled.nav`
 const Navigation = () => {
   const navList = NAV_NAMES.map( (name, idx) => {
     const route = name === 'Home' 
-    ? process.env.PROPER_PATH 
-    : process.env.PROPER_PATH + name.toLowerCase();
+    ? process.env.ROUTE 
+    : process.env.ROUTE + name.toLowerCase();
     
       return (
         <li key={ idx+1 }>
@@ -59,11 +59,11 @@ const Navigation = () => {
   });
 
   return (
-    <Nav>
+    <NavigationWrapper>
       <ul>
         {navList}
       </ul>
-    </Nav>
+    </NavigationWrapper>
   );
 }
 

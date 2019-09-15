@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Div = styled.div`
+const ContentsWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,10 +13,10 @@ const Div = styled.div`
 
 const About = () => {
   return (
-    <Div>
+    <ContentsWrapper>
       <p>@ This is made as a toy project for React Hooks</p>
       <p>Tech: [React Hooks] [Context API], [Reducer], [React Router]</p>
-    </Div>
+    </ContentsWrapper>
   );
 }
 

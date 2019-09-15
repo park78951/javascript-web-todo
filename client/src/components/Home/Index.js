@@ -4,7 +4,7 @@ import { LOADING } from '../../config';
 import styled from 'styled-components';
 import { countTodoItems } from '../../myUtil';
 
-const Div = styled.div`
+const ContentsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,15 +28,15 @@ const Home = () => {
   const todoSummary = (
     <div>
       <p>해야할 일: { numOfTodo }개 </p>
-      <p>완료할 일: { numOfDone }개 </p>
+      <p>완료한 일: { numOfDone }개 </p>
     </div>
   );
 
   return (
-    <Div>
+    <ContentsWrapper>
       <h1>TODO</h1>
       { !todoItems.length ? <p>{ LOADING }</p> : todoSummary }
-    </Div>
+    </ContentsWrapper>
   );
 }
 

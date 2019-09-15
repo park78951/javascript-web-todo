@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { TodoContext } from '../../TodoStorage';
 
-const Li = styled.li`
+const EachTodoListWrapper = styled.li`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -37,22 +37,23 @@ const ContentsList = ({ title, status, id }) => {
     dispatch({ type: 'DELETE_TODOITEMS', payload: id });
   }
   
-  const changeStatus = (e) => {
-    if(e.target.localName === 'li' || e.target.localName === 'button') return;
+  const changeStatus = ({ target }) => {
+    const { localName } = target;
+    if(localName === 'li' || localName === 'button') return;
     
-    const lineThroughList = e.target.closest('li div');
+    const lineThroughList = target.closest('li div');
     lineThroughList.classList.toggle('line-through');
     dispatch({ type: 'UPDATE_TODOITEMS', payload: id });
   }
 
   return (
-    <Li onClick={ changeStatus } >
+    <EachTodoListWrapper onClick={ changeStatus } >
       <div>
         <span>{ title }</span>
         <span>{ status }</span>
       </div>
       <RemoveBtn removeHandler={ removeHandler } />
-    </Li>
+    </EachTodoListWrapper>
   );
 }
 

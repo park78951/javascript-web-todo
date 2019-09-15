@@ -1,16 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Div = styled.div`
+const MainContentsWrapper = styled.div`
   min-height: 300px;
   color: #05386b;
 `
 
 const MainLayout = ({ children }) => {
   return (
-    <Div>
+    <MainContentsWrapper>
       { children }
-    </Div>
+    </MainContentsWrapper>
   );
 }
 

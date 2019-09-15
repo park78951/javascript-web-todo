@@ -36,9 +36,9 @@ const Main = () => {
         <MainLayout>
           <Switch>
             <TodoStorage>
-              <Route path={ process.env.PROPER_PATH } exact component={ Home } />
-              <Route path={ process.env.PROPER_PATH + 'todo' } component={ TodoApp } />
-              <Route path={ process.env.PROPER_PATH + 'about' } component={ About } />
+              <Route path={ process.env.ROUTE } exact component={ Home } />
+              <Route path={ process.env.ROUTE + 'todo' } component={ TodoApp } />
+              <Route path={ process.env.ROUTE + 'about' } component={ About } />
             </TodoStorage>
           </Switch>
         </MainLayout>

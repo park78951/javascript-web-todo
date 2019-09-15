@@ -3,7 +3,7 @@ import Contents from './Contents';
 import styled from 'styled-components';
 import { TodoContext } from '../../TodoStorage';
 
-const Div = styled.div`
+const TodoContensWrapper = styled.div`
   display: ${({ showingBtnTitle }) => showingBtnTitle === 'Show' ? 'none' : 'block'};
   font-size: 1.2rem;
   padding-top: 2rem;
@@ -16,12 +16,12 @@ const TodoList = () => {
   const { todoData, isFetched } = useContext(TodoContext);
   const { todoItems, showingBtnTitle } = todoData;
   return (
-    <Div showingBtnTitle={ showingBtnTitle }>
+    <TodoContensWrapper showingBtnTitle={ showingBtnTitle }>
       <Contents 
         myTodo={ todoItems } 
         isFetched={ isFetched }
       />
-    </Div>
+    </TodoContensWrapper>
   );
 }
 
