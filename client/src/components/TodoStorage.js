@@ -1,8 +1,8 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, createContext } from 'react';
 import useFetch from './helper/useFetch/useFetch';
 import { todoReducer } from './helper/reducers/todoReducer';
 
-export const TodoContext = React.createContext();
+export const TodoContext = createContext();
 
 const TodoStorage = ({ children }) => {
   const initTodoData = { todoItems: [], showingBtnTitle: 'Hide' };

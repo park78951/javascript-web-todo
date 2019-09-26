@@ -1,8 +1,8 @@
-import { getIdxOfMatchedItem } from '../../../myUtil';
+import { statusToggle } from '../../../myUtil';
 
 export const todoReducer = ({ todoItems, showingBtnTitle }, { type, payload }) => {
   const todoDuplicate = [...todoItems];
-  let matchedIdx;
+  let updatedTodoItems;
   
   switch (type) {
     case 'INIT_TODOITEMS':
@@ -15,17 +15,12 @@ export const todoReducer = ({ todoItems, showingBtnTitle }, { type, payload }) =
       };
         
     case 'UPDATE_TODOITEMS':
-      matchedIdx = getIdxOfMatchedItem({ itemCollection: todoItems, id: payload });
-      todoDuplicate[matchedIdx].status = 
-        todoDuplicate[matchedIdx].status === 'todo'
-        ? 'done'
-        : 'todo'
-      return { todoItems: todoDuplicate, showingBtnTitle };
+      updatedTodoItems = statusToggle({ itemCollection: todoDuplicate, id: payload })
+      return { todoItems: updatedTodoItems, showingBtnTitle };
     
     case 'DELETE_TODOITEMS':
-      matchedIdx = getIdxOfMatchedItem({ itemCollection: todoItems, id: payload });
-      todoDuplicate.splice(matchedIdx, 1);
-      return { todoItems: todoDuplicate, showingBtnTitle };
+      updatedTodoItems = todoDuplicate.filter(todoItem => todoItem.id !== payload)
+      return { todoItems: updatedTodoItems, showingBtnTitle };
     
     case 'CHANGE_BTNTITLE':
       return { 
