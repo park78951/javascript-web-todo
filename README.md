@@ -37,9 +37,12 @@ React를 사용해 Todo Application을 구현했습니다. React Hooks를 사용
 ## Challenge
 
 1. React Lifecycle의 변화
-
-2. React 최적화에 대한 학습
-
-3. 웹팩과 바벨 설정
-
-4. React Router
+- Class component 방식에서의 Lifecycle과 React Hooks 방식에서의 Lifecycle 관리에 대해 학습.
+- componentDidMount, shouldComponentUpdate를 대체하는 lifecyle api `useEffect`을 사용한 lifecycle의 관리 및 이해.
+2. React 최적화에 대한 학습.
+- React.memo, useMemo, useCallback과 같은 React 최적화 Api 사용법에 대해 학습하고 이를 Application에 적용.
+- React Dev Tools를 사용해 직접 불필요한 렌더링이 이뤄지는지에 대해 검사하며 최적화 진행.
+- React 최적화 Api의 작동원리를 공부하며 불필요한 사용으로 인한 Side Effect가 발생할 수 있어 지속적인 학습을 통해 최적화의 품질을 높일 것을 고민.
+3. Webpack과 Babel 설정
+- Create-React-App을 사용하지 않고 직접 React Webpack과 Babel을 학습해 이해하고 Application에 적용.
+- 필요한 Api를 사용하면서 편의성을 높이고 불필요한 설정을 최소화하여 Application의 크기를 줄이도록 노력.
