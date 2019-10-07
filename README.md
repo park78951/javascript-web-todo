@@ -1,5 +1,8 @@
 # Javascript-Web-Todo
 
+### Todo Application Demo
+![todo-demo](https://user-images.githubusercontent.com/37759759/66288178-2bccc000-e913-11e9-9707-7c22ba246624.gif)
+
 ## Introduction
 
 React를 사용해 Todo Application을 구현했습니다. React Hooks를 사용한 상태관리를 학습하고자 하였으며, Application 구현의 핵심 사항입니다.
